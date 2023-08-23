@@ -1,0 +1,2 @@
+include seaflow/doc/README.mdown
+graft seaflow/test

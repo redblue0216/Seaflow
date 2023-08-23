@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickStart &mdash; seaflow 0.1.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Design" href="design.html" />
+    <link rel="prev" title="Install" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            seaflow
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">QuickStart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Design</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">seaflow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">QuickStart</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/quickstart.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quickstart">
+<h1>QuickStart<a class="headerlink" href="#quickstart" title="Permalink to this heading">¶</a></h1>
+<p>Seaflow usage can be divided into three major steps. The first step is to configure the executor and generate instances, including scheduler configuration, data directory configuration, and plugin mounting; The second step is to register the object directly or register the node after objectification; Step 3: Process the registered callable objects; Step 4: Start the actuator directly.</p>
+<p>The following is an example of Seaflow usage,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">seaflow.nodes.node</span> <span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span> <span class="nn">seaflow.runners.dagrunner</span> <span class="kn">import</span> <span class="n">DAGRunnerNode</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1">### Declare Node Executor Instance</span>
+<span class="n">dagrunner</span> <span class="o">=</span> <span class="n">DAGRunnerNode</span><span class="p">()</span>
+<span class="c1">### function</span>
+<span class="k">def</span> <span class="nf">test_a</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">test_aa</span><span class="p">(</span><span class="n">aa</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">aa</span> <span class="o">+</span> <span class="mi">3</span>
+
+<span class="k">def</span> <span class="nf">test_b</span><span class="p">(</span><span class="n">a1</span><span class="p">,</span><span class="n">aa1</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a1</span> <span class="o">+</span> <span class="n">aa1</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">test_bb</span><span class="p">(</span><span class="n">bb</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">bb</span> <span class="o">+</span> <span class="mi">4</span>
+
+<span class="k">def</span> <span class="nf">test_c</span><span class="p">(</span><span class="n">b1</span><span class="p">,</span><span class="n">bb1</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">b1</span> <span class="o">+</span> <span class="n">bb1</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">test_cc</span><span class="p">(</span><span class="n">cc</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cc</span> <span class="o">+</span> <span class="mi">5</span>
+
+<span class="k">def</span> <span class="nf">test_d</span><span class="p">(</span><span class="n">b1</span><span class="p">,</span><span class="n">c1</span><span class="p">,</span><span class="n">cc1</span><span class="p">,</span><span class="n">f1</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">b1</span> <span class="o">+</span> <span class="n">c1</span> <span class="o">+</span> <span class="n">cc1</span> <span class="o">+</span> <span class="n">f1</span>
+
+<span class="k">def</span> <span class="nf">first_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">c</span>
+
+
+<span class="c1">### Node objectification</span>
+<span class="n">test_a_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">test_a</span><span class="p">,</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">],</span><span class="n">outputs</span><span class="o">=</span><span class="s1">&#39;a1&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test_a&#39;</span><span class="p">)</span> <span class="c1">#</span>
+<span class="n">test_aa_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">test_aa</span><span class="p">,</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;aa&#39;</span><span class="p">],</span><span class="n">outputs</span><span class="o">=</span><span class="s1">&#39;aa1&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test_aa&#39;</span><span class="p">)</span> <span class="c1">#</span>
+<span class="n">test_b_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">test_b</span><span class="p">,</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a1&#39;</span><span class="p">,</span><span class="s1">&#39;aa1&#39;</span><span class="p">],</span><span class="n">outputs</span><span class="o">=</span><span class="s1">&#39;b1&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test_b&#39;</span><span class="p">)</span> <span class="c1">##</span>
+<span class="n">test_bb_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">test_bb</span><span class="p">,</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bb&#39;</span><span class="p">],</span><span class="n">outputs</span><span class="o">=</span><span class="s1">&#39;bb1&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test_bb&#39;</span><span class="p">)</span> <span class="c1">#</span>
+<span class="n">test_c_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">test_c</span><span class="p">,</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;b1&#39;</span><span class="p">,</span><span class="s1">&#39;bb1&#39;</span><span class="p">],</span><span class="n">outputs</span><span class="o">=</span><span class="s1">&#39;c1&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test_c&#39;</span><span class="p">)</span> <span class="c1">##</span>
+<span class="n">test_cc_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">test_cc</span><span class="p">,</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">],</span><span class="n">outputs</span><span class="o">=</span><span class="s1">&#39;cc1&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test_cc&#39;</span><span class="p">)</span> <span class="c1">#</span>
+<span class="n">test_d_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">test_d</span><span class="p">,</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;b1&#39;</span><span class="p">,</span><span class="s1">&#39;c1&#39;</span><span class="p">,</span><span class="s1">&#39;cc1&#39;</span><span class="p">,</span><span class="s1">&#39;f1&#39;</span><span class="p">],</span><span class="n">outputs</span><span class="o">=</span><span class="s1">&#39;d1&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;test_d&#39;</span><span class="p">)</span> <span class="c1">####</span>
+<span class="n">first_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">first_func</span><span class="p">,</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="s1">&#39;cc1&#39;</span><span class="p">],</span><span class="n">outputs</span><span class="o">=</span><span class="s1">&#39;f1&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;first_func&#39;</span><span class="p">)</span> <span class="c1">##</span>
+
+
+<span class="c1">### Register on scheduler</span>
+<span class="n">test_a</span> <span class="o">=</span> <span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">controller_obj</span><span class="o">=</span><span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="p">)(</span><span class="n">test_a_node</span><span class="p">)</span>
+<span class="n">test_aa</span> <span class="o">=</span> <span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">controller_obj</span><span class="o">=</span><span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="p">)(</span><span class="n">test_aa_node</span><span class="p">)</span>
+<span class="n">test_b</span> <span class="o">=</span> <span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">controller_obj</span><span class="o">=</span><span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="p">)(</span><span class="n">test_b_node</span><span class="p">)</span>
+<span class="n">test_bb</span> <span class="o">=</span> <span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">controller_obj</span><span class="o">=</span><span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="p">)(</span><span class="n">test_bb_node</span><span class="p">)</span>
+<span class="n">test_c</span> <span class="o">=</span> <span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">controller_obj</span><span class="o">=</span><span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="p">)(</span><span class="n">test_c_node</span><span class="p">)</span>
+<span class="n">test_cc</span> <span class="o">=</span> <span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">controller_obj</span><span class="o">=</span><span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="p">)(</span><span class="n">test_cc_node</span><span class="p">)</span>
+<span class="n">test_d</span> <span class="o">=</span> <span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">controller_obj</span><span class="o">=</span><span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="p">)(</span><span class="n">test_d_node</span><span class="p">)</span>
+<span class="n">first_func</span><span class="o">=</span> <span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">controller_obj</span><span class="o">=</span><span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="p">)(</span><span class="n">first_node</span><span class="p">)</span>
+
+
+<span class="c1">### Registering target function dependencies to scheduler</span>
+<span class="n">test_a</span> <span class="o">&gt;&gt;</span> <span class="n">test_b</span> <span class="o">&gt;&gt;</span> <span class="n">test_c</span> <span class="o">&gt;&gt;</span> <span class="n">test_d</span>
+<span class="n">test_aa</span> <span class="o">&gt;&gt;</span> <span class="n">test_b</span> <span class="o">&gt;&gt;</span> <span class="n">test_d</span>
+<span class="n">test_bb</span> <span class="o">&gt;&gt;</span> <span class="n">test_c</span> <span class="o">&gt;&gt;</span> <span class="n">test_d</span>
+<span class="n">test_cc</span> <span class="o">&gt;&gt;</span> <span class="n">test_d</span>
+<span class="n">test_cc</span> <span class="o">&gt;&gt;</span> <span class="n">first_func</span> <span class="o">&gt;&gt;</span> <span class="n">test_d</span>
+
+
+<span class="c1">### Test the call of the node</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------&gt;&gt;&gt;&#39;</span><span class="p">,</span><span class="n">first_node</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">first_node</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">first_node</span><span class="p">)</span><span class="o">==</span><span class="n">Node</span><span class="p">)</span>
+
+
+<span class="c1">### Show nodes and edges</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;~~~~~~&#39;</span><span class="p">,</span><span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">get_graph_obj</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------&#39;</span><span class="p">,</span><span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">show_nodes</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;======&#39;</span><span class="p">,</span><span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">show_edges</span><span class="p">())</span>
+
+
+<span class="c1">### Show DAG diagram situation</span>
+<span class="c1"># dagrunner.scheduler.draw()</span>
+
+
+<span class="c1">### Calling the target function</span>
+<span class="n">tmp_func_a</span> <span class="o">=</span> <span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">get_function_obj</span><span class="p">(</span><span class="n">function_name</span><span class="o">=</span><span class="s1">&#39;test_aa&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">tmp_func_a</span><span class="p">))</span>
+<span class="n">tmp_func_b</span> <span class="o">=</span> <span class="n">dagrunner</span><span class="o">.</span><span class="n">scheduler</span><span class="o">.</span><span class="n">get_function_obj</span><span class="p">(</span><span class="n">function_name</span><span class="o">=</span><span class="s1">&#39;first_func&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tmp_func_a</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+
+<span class="c1">### Load initial parameter data into the catalog</span>
+<span class="n">dagrunner</span><span class="o">.</span><span class="n">catalog</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">data_name</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="n">data_obj</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">dagrunner</span><span class="o">.</span><span class="n">catalog</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">data_name</span><span class="o">=</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span><span class="n">data_obj</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">dagrunner</span><span class="o">.</span><span class="n">catalog</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">data_name</span><span class="o">=</span><span class="s1">&#39;bb&#39;</span><span class="p">,</span><span class="n">data_obj</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">dagrunner</span><span class="o">.</span><span class="n">catalog</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">data_name</span><span class="o">=</span><span class="s1">&#39;cc&#39;</span><span class="p">,</span><span class="n">data_obj</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">dagrunner</span><span class="o">.</span><span class="n">catalog</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">data_name</span><span class="o">=</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="n">data_obj</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1">### Scheduler function testing</span>
+<span class="c1"># ### Initialize Kahn work queue</span>
+<span class="c1"># dagrunner.scheduler.init_job_queue_with_kahn()</span>
+<span class="c1"># ### Using the Kahn algorithm to return the generator</span>
+<span class="c1"># run_list = dagrunner.scheduler.dispath_algorithm_with_kahn()</span>
+<span class="c1"># print(run_list,&#39;--------------------------&#39;)</span>
+<span class="c1"># for i in run_list:</span>
+<span class="c1">#     print(i)</span>
+<span class="c1">#     ray_result = dagrunner.execute_algorithm_with_ray(run_list=i)</span>
+<span class="c1">#     print(&#39;==========&#39;,ray_result)</span>
+
+
+<span class="c1">### Formal operation interface</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">dagrunner</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cost time is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dagrunner</span><span class="o">.</span><span class="n">catalog</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">data_name</span><span class="o">=</span><span class="s1">&#39;d1&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="design.html" class="btn btn-neutral float-right" title="Design" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, shihua.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

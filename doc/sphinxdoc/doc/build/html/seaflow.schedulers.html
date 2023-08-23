@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>seaflow.schedulers package &mdash; seaflow 0.1.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="seaflow.runners package" href="seaflow.runners.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            seaflow
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">code</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="seaflow.html">seaflow package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="seaflow.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="seaflow.hooks.html">seaflow.hooks package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="seaflow.ios.html">seaflow.ios package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="seaflow.nodes.html">seaflow.nodes package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="seaflow.runners.html">seaflow.runners package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">seaflow.schedulers package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="seaflow.html#module-seaflow">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">seaflow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">code</a></li>
+          <li class="breadcrumb-item"><a href="seaflow.html">seaflow package</a></li>
+      <li class="breadcrumb-item active">seaflow.schedulers package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/seaflow.schedulers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="seaflow-schedulers-package">
+<h1>seaflow.schedulers package<a class="headerlink" href="#seaflow-schedulers-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-seaflow.schedulers.dag">
+<span id="seaflow-schedulers-dag-module"></span><h2>seaflow.schedulers.dag module<a class="headerlink" href="#module-seaflow.schedulers.dag" title="Permalink to this heading">¶</a></h2>
+<section id="module-introduction">
+<h3>Module Introduction<a class="headerlink" href="#module-introduction" title="Permalink to this heading">¶</a></h3>
+<p>This is a directed acyclic graph management class, which mainly manages directed acyclic graphs, including CRUD operations related to directed acyclic graphs and scheduling operations based on directed acyclic graphs; Main technologies: Networkx, descriptor technology, Kahn hierarchical algorithm, decorator technology and magic method of Operator overloading, prepare and new construction process.</p>
+<ul>
+<li><p>Design mode:</p>
+<blockquote>
+<div><p>nothing</p>
+</div></blockquote>
+</li>
+<li><p>Key points:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Networkx</p></li>
+<li><p>Descriptor technology</p></li>
+<li><p>Kahn algorithm</p></li>
+<li><p>Prepare and New Construction Process Magic Method</p></li>
+<li><p>Decorator Technology</p></li>
+<li><p>Operator overloading</p></li>
+<li><p>Type meta</p></li>
+<li><p>Call magic method</p></li>
+<li><p>Get magic method</p></li>
+<li><p>Deque technology</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Main functions:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>CRUD Operation of Directed acyclic graph</p></li>
+<li><p>Scheduling operations of Directed acyclic graph</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="usage-examples">
+<h3>Usage examples<a class="headerlink" href="#usage-examples" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="class-description">
+<h3>Class Description<a class="headerlink" href="#class-description" title="Permalink to this heading">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGManagerDict">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seaflow.schedulers.dag.</span></span><span class="sig-name descname"><span class="pre">DAGManagerDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGManagerDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">OrderedDict</span></code></p>
+<p>Class Introduction:</p>
+<p>Define a DAG diagram dedicated management Data dictionary and inherit the ordered dictionary.</p>
+<p>Attribute Function:</p>
+<p>Define a method for initializing DAG management dictionaries.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seaflow.schedulers.dag.</span></span><span class="sig-name descname"><span class="pre">DAGer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scheduler=&lt;seaflow.schedulers.dag.KahnScheduler</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class Introduction:</p>
+<p>This is a Directed acyclic graph control class. Its main function is to provide the management of DAG, computing engine management and scheduling management. The main technologies are based on DAG technology of Networkx, Ray based computing environment, decorator technology and Operator overloading.</p>
+<p>Attribute Function:</p>
+<blockquote>
+<div><p>Define an initial attribute method, mainly used to load the calculation engine and scheduling engine when creating control objects.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>dag (object) - DAG Graph Management Objects.</p></li>
+<li><p>scheduler (object) - Scheduling Engine Object.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.add_edge">
+<span class="sig-name descname"><span class="pre">add_edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'single'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.add_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for adding edges.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>start_node_name (str) - Start Node Name.</p></li>
+<li><p>end_node_name (str) - End Node Name.</p></li>
+<li><p>data_obj (object) - Node Data Object.</p></li>
+<li><p>method (str) - Add Method.</p></li>
+<li><p>data_dict_list (list) - List of Data dictionary.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>result (str) - Return result text.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.add_node">
+<span class="sig-name descname"><span class="pre">add_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'single'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.add_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for adding nodes.</p>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>node_name (str) - node name.</p></li>
+<li><p>data_obj (obj) - node data object.</p></li>
+<li><p>method (str) - Add Method.</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>data_dict_list (list) - List of Data dictionary.</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>result (str): Return result text.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.dispath_algorithm_with_kahn">
+<span class="sig-name descname"><span class="pre">dispath_algorithm_with_kahn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.dispath_algorithm_with_kahn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a scheduling method using Kahn algorithm, where yield technique is used to return a generator.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>run_list_iter (iter) - kahn run list iter.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<p>Define a method for displaying legends.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.get_edge_attributes">
+<span class="sig-name descname"><span class="pre">get_edge_attributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.get_edge_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for obtaining edge attributes.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>start_node_name (str) - Start Node Name.</p></li>
+<li><p>end_node_name (str) - End Node Name.</p></li>
+<li><p>attr_name (str) - Attribute Name.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>attr_data (object) - Attribute data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.get_edge_neighbor">
+<span class="sig-name descname"><span class="pre">get_edge_neighbor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.get_edge_neighbor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for accessing neighboring edges of target nodes.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>node_name (str) - Node name.</p></li>
+<li><p>direction (str) - Access direction.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>edges_list (list) - Edges list.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.get_function_obj">
+<span class="sig-name descname"><span class="pre">get_function_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.get_function_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method to obtain the Function object.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>function_name (str) - Function name.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>function_obj (object) - Function object.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.get_graph_obj">
+<span class="sig-name descname"><span class="pre">get_graph_obj</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.get_graph_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for obtaining graph objects.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>graph_obj (object) - Graph object, based on networkx technology.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.get_node_attributes">
+<span class="sig-name descname"><span class="pre">get_node_attributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.get_node_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for obtaining node attributes.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>node_name (str) - Node name.</p></li>
+<li><p>attr_name (str) - Attribute Name.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>atrr_data (object) - Attribute data.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.get_node_neighbor">
+<span class="sig-name descname"><span class="pre">get_node_neighbor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.get_node_neighbor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for accessing neighboring nodes of the target node.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>node_name (str) - Node name.</p></li>
+<li><p>direction (str) - Access direction.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>nodes_list (list) - Nodes list.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.init_job_queue_with_kahn">
+<span class="sig-name descname"><span class="pre">init_job_queue_with_kahn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.init_job_queue_with_kahn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for initializing priority scheduling queues using the Kahn algorithm.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>result (str) - Return result text.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.kahnclassification_algorithm">
+<span class="sig-name descname"><span class="pre">kahnclassification_algorithm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.kahnclassification_algorithm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a DAG graph layering algorithm.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>kahnclassification_list (list) - Kahn Rating List.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.modify_edge">
+<span class="sig-name descname"><span class="pre">modify_edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.modify_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for modifying edges.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>start_node_name (str) - Start Node Name.</p></li>
+<li><p>end_node_name (str) - End Node Name.</p></li>
+<li><p>data_obj (object) - Node Data Object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>result (str) - Return result text.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.modify_node">
+<span class="sig-name descname"><span class="pre">modify_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.modify_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for modifying nodes.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>node_name (str) - Node name.</p></li>
+<li><p>data_obj (object) - Node data object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>result (str) - Return result text.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.query_edge">
+<span class="sig-name descname"><span class="pre">query_edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.query_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Method of Defining a Query Graph Edge.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>start_node_name (str) - Start Node Name.</p></li>
+<li><p>end_node_name (str) - End Node Name.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>data_dict (str) - Data Dict.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.query_node">
+<span class="sig-name descname"><span class="pre">query_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.query_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Method for defining a query graph node.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>node_name (str) - Node name.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>data_dict (dict) - Data Dict.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controller_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a decorator method for registering functions, using the decorator function technique with parameters.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>controller_obj (object) - controller object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>decorate (function) - Decorator Function object.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.remove_edge">
+<span class="sig-name descname"><span class="pre">remove_edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'single'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edges_name_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.remove_edge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for deleting edges.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>method (str) - Delete Method.</p></li>
+<li><p>edge_name (str) - Edge Name.</p></li>
+<li><p>edges_name_list (list) - Edge Name List.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>result (str) - Return result text.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.remove_node">
+<span class="sig-name descname"><span class="pre">remove_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'single'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes_name_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.remove_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for deleting nodes.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>method (str) - Delete Method.</p></li>
+<li><p>node_name (str) - node name.</p></li>
+<li><p>nodes_name_list (list) - Node Name List.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>result (str) - Return result text.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.show_edges">
+<span class="sig-name descname"><span class="pre">show_edges</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.show_edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>A method for defining the edge situation of a presentation graph manager.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>show_edges_list (List) - Show Edge List.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.show_nodes">
+<span class="sig-name descname"><span class="pre">show_nodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.show_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method to display the node situation of the graph manager.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>show_nodes_list (List) - Display node list.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGer.toposort_algorithm">
+<span class="sig-name descname"><span class="pre">toposort_algorithm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGer.toposort_algorithm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for Topological sorting.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>toposort_list (list) - Topological sorting List.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGerMeta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seaflow.schedulers.dag.</span></span><span class="sig-name descname"><span class="pre">DAGerMeta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attrs_dict</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DAGerMeta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
+<p>Class Introduction:</p>
+<p>This is a control metaclass of Ensemble learning calculation chart. Its main function is to manage the generation of Ensemble learning calculation chart control class. Its main technology__Prepare__,__New__.</p>
+<p>Method Function:</p>
+<blockquote>
+<div><p>Overload a class creation method to implement DAG management objects based on Networkx.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>name (str) - class name.</p></li>
+<li><p>bases (tuple) - Base calss tuple.</p></li>
+<li><p>attrs_dict (dict) - A namespace variable defined within a class, starting from__Prepare__ Method return access.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>instance (object) - Create an instance of the class (actually an object).</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DAGerMeta.instance">
+<span class="sig-name descname"><span class="pre">instance</span></span><a class="headerlink" href="#seaflow.schedulers.dag.DAGerMeta.instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#seaflow.schedulers.dag.DAGer" title="seaflow.schedulers.dag.DAGer"><code class="xref py py-class docutils literal notranslate"><span class="pre">DAGer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.DirectedAcyclicGraph">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seaflow.schedulers.dag.</span></span><span class="sig-name descname"><span class="pre">DirectedAcyclicGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.dag.DirectedAcyclicGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class Introduction:</p>
+<p>This is a DAG management class, mainly used to manage DAG, mainly using Networkx technology and descriptor protocols.</p>
+<p>Attribute Function:</p>
+<blockquote>
+<div><p>Define an initialization method, mainly used to define the DAG manager name.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>name (str) - name.</p></li>
+<li><p>graph (DAGManagerDict) - DAG Manager Dictionary Object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="seaflow.schedulers.dag.KahnScheduler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seaflow.schedulers.dag.</span></span><span class="sig-name descname"><span class="pre">KahnScheduler</span></span><a class="headerlink" href="#seaflow.schedulers.dag.KahnScheduler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class Introduction:</p>
+<p>This is a task scheduler class, with main functions based on DAG calculation graphs and scheduling calculations using a computing engine. The main techniques include hierarchical queues and scheduling algorithms.</p>
+<p>Attribute Function:</p>
+<p>Define an initialization method for generating work queues.</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-seaflow.schedulers.pipeline">
+<span id="seaflow-schedulers-pipeline-module"></span><h2>seaflow.schedulers.pipeline module<a class="headerlink" href="#module-seaflow.schedulers.pipeline" title="Permalink to this heading">¶</a></h2>
+<section id="id1">
+<h3>Module Introduction<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>This is a scheduling management class that mainly combines nodes to form execution processes; Main technical internal methods and magic methods.</p>
+<ul>
+<li><p>Design mode:</p>
+<blockquote>
+<div><p>nothing</p>
+</div></blockquote>
+</li>
+<li><p>Key points:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Attribute function</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Main functions:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Function node management</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h3>Usage examples<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="id3">
+<h3>Class Description<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="seaflow.schedulers.pipeline.Pipeline">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seaflow.schedulers.pipeline.</span></span><span class="sig-name descname"><span class="pre">Pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.pipeline.Pipeline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class Introduction:</p>
+<p>This is a process management class that mainly combines nodes to form execution processes; Main technical internal methods and magic methods.</p>
+<p>Attribute Function:</p>
+<blockquote>
+<div><p>Define an initialization method for process pipeline class attributes.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>nodes (list) - Node Object List (Ordered).</p></li>
+<li><p>_nodes_by_name (list) - Node Name List (Ordered).</p></li>
+<li><p>_nodes_by_input (orderdict) - Node Input List (Ordered).</p></li>
+<li><p>_nodes_by_output (orderdict) - Node output list (ordered).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.pipeline.Pipeline.inputs">
+<span class="sig-name descname"><span class="pre">inputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.pipeline.Pipeline.inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for enumerating input parameters in a process pipeline.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>inputs (orderdict) - Ordered Dictionary of Input Parameters.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.pipeline.Pipeline.names">
+<span class="sig-name descname"><span class="pre">names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.pipeline.Pipeline.names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Define a method for enumerating node names in a process pipeline.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>names (list) - Node Name List.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seaflow.schedulers.pipeline.Pipeline.outputs">
+<span class="sig-name descname"><span class="pre">outputs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seaflow.schedulers.pipeline.Pipeline.outputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method Function:</p>
+<blockquote>
+<div><p>Method of defining a grid to list output parameters in a process pipeline.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>outputs (orderdict) - Output Parameter Ordered Dictionary</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="module-seaflow.schedulers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-seaflow.schedulers" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="seaflow.runners.html" class="btn btn-neutral float-left" title="seaflow.runners package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, shihua.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: seaflow
+Version: 0.1.1
+Summary: Seaflow is an algorithm orchestration tool developed based on directed acyclic graphs. Its main functions include algorithm workflow orchestration, automatic optimization of runtime parallel scheduling, cache optimization, and support for heterogeneity.
+Author: shihua
+Author-email: 15021408795@163.com
+License: BSD 3 clause
+Requires-Python: >=3.9.13
