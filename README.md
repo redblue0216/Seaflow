@@ -35,6 +35,13 @@ Node is the basic unit of Seaflow runtime, which needs to be object-oriented enc
 Function is another basic unit of Seaflow runtime that does not require object-oriented encapsulation, does not support parameter dependency, and cannot use input.
 
 
+## What technologies were used
+
++ [Ray](https://www.ray.io)
++ [Networkx](https://networkx.org)
++ MetaProgramming(Python)
+
+
 ## How to get it
 
 The master branch on GitHub is the most up to date code
