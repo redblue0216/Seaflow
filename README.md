@@ -36,11 +36,17 @@ Function is another basic unit of Seaflow runtime that does not require object-o
 
 The master branch on GitHub is the most up to date code
 
+<https://github.com/redblue0216/Seaflow>
+
 Source download of release tags are available on GitHub
+
+<https://github.com/redblue0216/Seaflow/releases/tag/seaflow_distribution_wheel>
 
 Binaries and source distributions are available from PyPi
 
-
+```bash
+$ pip install shihua-seaflow
+```
 
 ## License
 
@@ -51,5 +57,6 @@ Modified BSD (3-clause)
 
 Bug reports can be submitted to the issue tracker at 
 
+<https://github.com/redblue0216/Seaflow/issues>
 
 
