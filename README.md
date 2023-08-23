@@ -10,8 +10,11 @@ Seaflow is an algorithm orchestration tool developed based on directed acyclic g
 
 The documentationn for user guide  is at 
 
+<https://seaflow-officialdoc.netlify.app>
+
 The documentation for code comments is at
 
+<https://seaflow-codedoc.netlify.app>
 
 
 ## Main Concepts
@@ -58,5 +61,4 @@ Modified BSD (3-clause)
 Bug reports can be submitted to the issue tracker at 
 
 <https://github.com/redblue0216/Seaflow/issues>
-
 
